@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://w4eqkph2bgia"]
+
+[ext_resource type="Script" path="res://src/Wall/WallManager.cs" id="1_s1ov4"]
+[ext_resource type="PackedScene" uid="uid://dxoo5llwa80bw" path="res://src/Wall/Wall.tscn" id="2_4j1ai"]
+
+[node name="WallManager" type="ReferenceRect" node_paths=PackedStringArray("Bot", "Top")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0.494118, 0.435294, 0.988235, 1)
+script = ExtResource("1_s1ov4")
+Bot = NodePath("Bot")
+Top = NodePath("Top")
+WallReference = ExtResource("2_4j1ai")
+
+[node name="Top" type="ReferenceRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="Bot" type="ReferenceRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0

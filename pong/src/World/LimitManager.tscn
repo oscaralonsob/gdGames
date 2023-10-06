@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3fu01d2ahk0d"]
+
+[ext_resource type="Script" path="res://src/World/LimitManager.cs" id="1_yr6ie"]
+[ext_resource type="PackedScene" uid="uid://dob4f8ipflfe8" path="res://src/World/Limit.tscn" id="2_2e6g5"]
+
+[node name="LimitManager" type="ReferenceRect" node_paths=PackedStringArray("Right", "Left")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0.494118, 0.435294, 0.988235, 1)
+script = ExtResource("1_yr6ie")
+Right = NodePath("Right")
+Left = NodePath("Left")
+LimitReference = ExtResource("2_2e6g5")
+
+[node name="Right" type="ReferenceRect" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Left" type="ReferenceRect" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2

@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://cssyisxk7055j"]
+
+[ext_resource type="Script" path="res://src/Ball/MovementController.cs" id="1_gany7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ka276"]
+size = Vector2(1, 1)
+
+[node name="Ball" type="Node2D"]
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MovementController" type="Node2D" parent="."]
+script = ExtResource("1_gany7")
+Speed = 100.0
+Direction = Vector2(1, -1)
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(10, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ka276")
+
+[connection signal="area_entered" from="Area2D" to="MovementController" method="_OnArea2DAreaEntered"]
