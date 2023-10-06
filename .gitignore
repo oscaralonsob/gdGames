@@ -1,0 +1,8 @@
+# Godot files
+.godot
+.import
+.export
+
+# Vsc
+*.sln
+*.csproj
