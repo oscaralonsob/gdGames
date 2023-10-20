@@ -12,12 +12,14 @@ public partial class MovementController : Node2D
 	private Node2D ParentNode { get; set; }
 	private Vector2 OriginalPosition { get; set; }
 	private Vector2 OriginalDirection { get; set; }
+	private float OriginalSpeed { get; set; }
 
 	public override void _Ready()
 	{
 		ParentNode = GetParent<Node2D>();
 		OriginalPosition = ParentNode.Position;
 		OriginalDirection = Direction;
+		OriginalSpeed = Speed;
 		//TODO: check null or empty (no init in editor maybe?)
 	}
 
@@ -31,18 +33,16 @@ public partial class MovementController : Node2D
 	//TODO: when looking for points and pausing the game, this can be extracted so more logic that has nothing to do with movement can be added
 	public void _OnArea2DAreaEntered(Area2D area)
 	{
-
-		GD.Print("Collision happened");
 		if (area.IsInGroup("Wall")) {
 			Direction = new Vector2(Direction.X, -Direction.Y);
+			Speed *= 1.2f;
 		} else if (area.IsInGroup("Limit")) {
 			ParentNode.Position = OriginalPosition;
 			Direction = OriginalDirection;
-		} 
-		/* TODO:
-		else if (area.IsInGroup("Paddle")) {
-			ParentNode.Position = OriginalPosition;
-			Direction = OriginalDirection;
-		}*/
+			Speed = OriginalSpeed;
+		} else if (area.IsInGroup("Paddle")) {
+			Direction = new Vector2(-Direction.X, Direction.Y);
+			Speed *= 1.2f;
+		}
 	}
 }

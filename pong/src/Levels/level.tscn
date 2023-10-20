@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bk1qat2i6eacu"]
+[gd_scene load_steps=5 format=3 uid="uid://bk1qat2i6eacu"]
 
 [ext_resource type="PackedScene" uid="uid://w4eqkph2bgia" path="res://src/Wall/WallManager.tscn" id="1_y1arg"]
 [ext_resource type="PackedScene" uid="uid://c3fu01d2ahk0d" path="res://src/World/LimitManager.tscn" id="2_cfqu3"]
 [ext_resource type="PackedScene" uid="uid://cssyisxk7055j" path="res://src/Ball/ball.tscn" id="2_lvg3n"]
+[ext_resource type="PackedScene" uid="uid://bphgg4g4ohinf" path="res://src/Paddle/PaddleManager.tscn" id="3_2loe7"]
 
 [node name="Level" type="Node"]
 
@@ -22,5 +23,8 @@ layout_mode = 1
 [node name="LimitManager" parent="Control" instance=ExtResource("2_cfqu3")]
 layout_mode = 1
 
+[node name="PaddleManager" parent="Control" instance=ExtResource("3_2loe7")]
+layout_mode = 1
+
 [node name="Ball" parent="." instance=ExtResource("2_lvg3n")]
-position = Vector2(200, 200)
+position = Vector2(1000, 400)

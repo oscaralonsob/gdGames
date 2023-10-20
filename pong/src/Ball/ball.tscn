@@ -6,7 +6,6 @@
 size = Vector2(1, 1)
 
 [node name="Ball" type="Node2D"]
-scale = Vector2(2, 2)
 
 [node name="Sprite2D" type="ColorRect" parent="."]
 anchors_preset = 8

@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://hr7727208ufw"]
+
+[ext_resource type="Script" path="res://src/Paddle/Paddle.cs" id="1_7dy4k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftcas"]
+size = Vector2(2, 2)
+
+[node name="Paddle" type="Node2D"]
+script = ExtResource("1_7dy4k")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Area2D" type="Area2D" parent="." groups=["Paddle"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ftcas")
+debug_color = Color(0.952941, 0, 0.556863, 0.419608)
