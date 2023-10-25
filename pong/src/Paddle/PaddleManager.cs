@@ -14,7 +14,7 @@ public partial class PaddleManager : ReferenceRect
 	{
 		Paddle scene = PaddleReference.Instantiate<Paddle>();
 		AddChild(scene);
-		scene.Init(Left.Position + new Vector2(50, 0), new Vector2(10, 50));
+		scene.Init(Left.Position + new Vector2(50, 0), new Vector2(10, 50), 1);
 
 	 	scene = PaddleReference.Instantiate<Paddle>();
 		AddChild(scene);

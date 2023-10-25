@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://hr7727208ufw"]
+[gd_scene load_steps=4 format=3 uid="uid://hr7727208ufw"]
 
 [ext_resource type="Script" path="res://src/Paddle/Paddle.cs" id="1_7dy4k"]
+[ext_resource type="Script" path="res://src/Paddle/PaddleMovementController.cs" id="2_erhgp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ftcas"]
 size = Vector2(2, 2)
@@ -26,3 +27,7 @@ grow_vertical = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_ftcas")
 debug_color = Color(0.952941, 0, 0.556863, 0.419608)
+
+[node name="MovementController" type="Node" parent="." node_paths=PackedStringArray("Parent")]
+script = ExtResource("2_erhgp")
+Parent = NodePath("..")

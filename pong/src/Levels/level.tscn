@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bk1qat2i6eacu"]
+[gd_scene load_steps=6 format=3 uid="uid://bk1qat2i6eacu"]
 
 [ext_resource type="PackedScene" uid="uid://w4eqkph2bgia" path="res://src/Wall/WallManager.tscn" id="1_y1arg"]
 [ext_resource type="PackedScene" uid="uid://c3fu01d2ahk0d" path="res://src/World/LimitManager.tscn" id="2_cfqu3"]
 [ext_resource type="PackedScene" uid="uid://cssyisxk7055j" path="res://src/Ball/ball.tscn" id="2_lvg3n"]
 [ext_resource type="PackedScene" uid="uid://bphgg4g4ohinf" path="res://src/Paddle/PaddleManager.tscn" id="3_2loe7"]
+[ext_resource type="Script" path="res://src/Score/ScoreController.cs" id="4_j2qju"]
 
 [node name="Level" type="Node"]
 
@@ -26,5 +27,18 @@ layout_mode = 1
 [node name="PaddleManager" parent="Control" instance=ExtResource("3_2loe7")]
 layout_mode = 1
 
+[node name="Control" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+text = "
+0 - 0"
+script = ExtResource("4_j2qju")
+
 [node name="Ball" parent="." instance=ExtResource("2_lvg3n")]
-position = Vector2(1000, 400)
+position = Vector2(575, 300)

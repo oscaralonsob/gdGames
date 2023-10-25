@@ -40,6 +40,7 @@ public partial class MovementController : Node2D
 			ParentNode.Position = OriginalPosition;
 			Direction = OriginalDirection;
 			Speed = OriginalSpeed;
+			EventBus.Instance.EmitSignal(EventBus.SignalName.GoalScored, area.Position.X < OriginalPosition.X);
 		} else if (area.IsInGroup("Paddle")) {
 			Direction = new Vector2(-Direction.X, Direction.Y);
 			Speed *= 1.2f;
