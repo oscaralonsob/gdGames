@@ -3,7 +3,7 @@
 
 The classic Pong game, a two-dimensional sports game that simulates table tennis.
 
-[Pong](https://github.com/oscaralonsob/gdGames/assets/15985902/0a33a190-2f22-4791-a205-6d0d9dc30350?raw=true)
+<img src="https://github.com/oscaralonsob/gdGames/assets/15985902/0a33a190-2f22-4791-a205-6d0d9dc30350" width="500" />
 
 ## How to play!
 
