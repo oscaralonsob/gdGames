@@ -1,14 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmggaa61yw5hj"]
+[gd_scene load_steps=4 format=3 uid="uid://dmggaa61yw5hj"]
 
 [ext_resource type="PackedScene" uid="uid://dqspibw2m18ya" path="res://src/Target/target.tscn" id="1_qcdcs"]
 [ext_resource type="PackedScene" uid="uid://dge7gsrns7kh" path="res://src/Score/score.tscn" id="1_wuwhs"]
-[ext_resource type="Script" path="res://src/Score/score.cs" id="2_1cdoc"]
 [ext_resource type="Script" path="res://src/Global/Services.cs" id="4_fang5"]
 
 [node name="Node" type="Node"]
 
 [node name="Score" parent="." instance=ExtResource("1_wuwhs")]
-script = ExtResource("2_1cdoc")
 
 [node name="Target" parent="." instance=ExtResource("1_qcdcs")]
 position = Vector2(100, 100)

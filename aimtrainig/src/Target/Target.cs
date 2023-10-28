@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class target : Node2D
+public partial class Target : Node2D
 {
 	private bool isActive = true;
 

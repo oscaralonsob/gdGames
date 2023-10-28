@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dge7gsrns7kh"]
+[gd_scene load_steps=2 format=3 uid="uid://dge7gsrns7kh"]
+
+[ext_resource type="Script" path="res://src/Score/Score.cs" id="1_at85g"]
 
 [node name="Score" type="Label"]
 anchors_preset = 5
@@ -10,3 +12,4 @@ offset_right = 21.5
 offset_bottom = 51.0
 grow_horizontal = 2
 text = "Score"
+script = ExtResource("1_at85g")

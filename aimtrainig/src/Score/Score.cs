@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class score : Label
+public partial class Score : Label
 {
 	private int totalHits = 0;
 	private int totalShoots = 0;
