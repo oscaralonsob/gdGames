@@ -10,9 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Pong"
-run/main_scene="res://src/Ball/ball.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
+config/name="AimTrainig"
+config/features=PackedStringArray("4.1", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -21,4 +20,4 @@ EventBus="*res://src/Global/EventBus.cs"
 
 [dotnet]
 
-project/assembly_name="Pong"
+project/assembly_name="AimTrainig"
