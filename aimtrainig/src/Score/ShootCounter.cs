@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Services : Node
+public partial class ShootCounter : Node
 {
 	private bool released = true;
 

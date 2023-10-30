@@ -10,22 +10,22 @@ public partial class Score : Label
   {
 	  EventBus.Instance.TargetHit += OnTargetHit;
 	  EventBus.Instance.Shoot += OnShoot;
-		printScore();
+		PrintScore();
   }
 
   public void OnTargetHit()
   {
 		totalHits++;
-		printScore();
+		PrintScore();
   }
 
   public void OnShoot()
   {
 		totalShoots++;
-		printScore();
+		PrintScore();
   }
 
-	private void printScore() {
+	private void PrintScore() {
 		float accuracy = totalShoots == 0 ? 0 : totalHits  * 100 / totalShoots;
 		Text = "Hits: " + totalHits +  "\nShoots: " + totalShoots +  "\nAccuracy: " + accuracy + "%";
 	}

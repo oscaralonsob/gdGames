@@ -1,15 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmggaa61yw5hj"]
+[gd_scene load_steps=5 format=3 uid="uid://dmggaa61yw5hj"]
 
 [ext_resource type="PackedScene" uid="uid://dqspibw2m18ya" path="res://src/Target/target.tscn" id="1_qcdcs"]
 [ext_resource type="PackedScene" uid="uid://dge7gsrns7kh" path="res://src/Score/score.tscn" id="1_wuwhs"]
-[ext_resource type="Script" path="res://src/Global/Services.cs" id="4_fang5"]
+[ext_resource type="Script" path="res://src/Score/ShootCounter.cs" id="3_hebi6"]
+[ext_resource type="Script" path="res://src/Target/TargetManager.cs" id="4_aqwk0"]
 
 [node name="Node" type="Node"]
 
 [node name="Score" parent="." instance=ExtResource("1_wuwhs")]
 
-[node name="Target" parent="." instance=ExtResource("1_qcdcs")]
-position = Vector2(100, 100)
+[node name="ShootCounter" type="Node" parent="."]
+script = ExtResource("3_hebi6")
 
-[node name="Services" type="Node" parent="."]
-script = ExtResource("4_fang5")
+[node name="TargetManager" type="ReferenceRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("4_aqwk0")
+Target = ExtResource("1_qcdcs")
