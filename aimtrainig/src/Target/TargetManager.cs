@@ -45,3 +45,5 @@ public partial class TargetManager : ReferenceRect
 		TargetActive = false;
 	}
 }
+
+

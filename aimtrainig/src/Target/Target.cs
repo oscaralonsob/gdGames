@@ -18,7 +18,6 @@ public partial class Target : Node2D
 		if (lifeTimeLeft < 0) {
 			EventBus.Instance.EmitSignal(EventBus.SignalName.TimeElapsed);
 		} 
-		GD.Print(lifeTimeLeft);
 	}
 
 	public void SetLifeTime(double miliseconds)
