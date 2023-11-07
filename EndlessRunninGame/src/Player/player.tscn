@@ -14,7 +14,8 @@ texture = ExtResource("1_myndj")
 
 [node name="JumpController" type="Node2D" parent="."]
 script = ExtResource("3_44x53")
-JumpForce = 30000
+JumpForce = 350
+JumpMaxTime = 0.25
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ctkgr")
