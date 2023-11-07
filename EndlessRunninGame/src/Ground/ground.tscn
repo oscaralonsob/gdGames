@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpbo3wai53fs5"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xgcb8"]
+a = Vector2(1154, 0)
+b = Vector2(0, 0)
+
+[node name="Ground" type="RigidBody2D"]
+
+[node name="ShapeCast2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_xgcb8")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 1154, 0)
+width = 1.5
+default_color = Color(0, 0, 0, 1)

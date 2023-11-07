@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcqejn22fg8w5"]
+
+[ext_resource type="Texture2D" uid="uid://ctrykojd37pqv" path="res://src/Object/spike.png" id="1_mem06"]
+[ext_resource type="Script" path="res://src/Object/MovementController.cs" id="2_as32k"]
+
+[node name="Object" type="RigidBody2D" groups=["Object"]]
+scale = Vector2(0.5, 0.5)
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mem06")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -30, 30, 30, -30, 30)
+
+[node name="MovementController" type="Node2D" parent="."]
+script = ExtResource("2_as32k")
+Speed = 150

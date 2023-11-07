@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://ct0u73dse5rvb"]
+
+[ext_resource type="Texture2D" uid="uid://deph6jy2f044k" path="res://src/Player/player.png" id="1_myndj"]
+[ext_resource type="Script" path="res://src/Player/JumpController.cs" id="3_44x53"]
+[ext_resource type="Script" path="res://src/Player/HealthController.cs" id="3_f07sj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ctkgr"]
+size = Vector2(35, 55)
+
+[node name="Player" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_myndj")
+
+[node name="JumpController" type="Node2D" parent="."]
+script = ExtResource("3_44x53")
+JumpForce = 30000
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ctkgr")
+
+[node name="HealthController" type="Node2D" parent="."]
+script = ExtResource("3_f07sj")
+
+[connection signal="body_entered" from="." to="JumpController" method="OnPlayerBodyEntered"]
+[connection signal="body_entered" from="." to="HealthController" method="OnPlayerBodyEntered"]

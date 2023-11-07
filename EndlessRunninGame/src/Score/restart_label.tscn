@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://drtadab1w34pc"]
+
+[node name="RestartLabel" type="Label"]
