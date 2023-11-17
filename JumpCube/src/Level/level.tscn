@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgtpssp0jv0dp"]
+
+[ext_resource type="PackedScene" uid="uid://c6capijieeabv" path="res://src/Platform/platform.tscn" id="1_c4cv0"]
+[ext_resource type="PackedScene" uid="uid://ylk5fkw1nl6v" path="res://src/Player/player.tscn" id="2_yovo5"]
+[ext_resource type="PackedScene" uid="uid://cdtrtei6wuyfl" path="res://src/camera.tscn" id="3_ch4np"]
+
+[node name="Level" type="Node"]
+
+[node name="Platform" parent="." instance=ExtResource("1_c4cv0")]
+position = Vector2(489, 365)
+
+[node name="Player" parent="." instance=ExtResource("2_yovo5")]
+position = Vector2(362, 291)
+
+[node name="Platform2" parent="." instance=ExtResource("1_c4cv0")]
+position = Vector2(357, 227)
+
+[node name="Camera" parent="." instance=ExtResource("3_ch4np")]
