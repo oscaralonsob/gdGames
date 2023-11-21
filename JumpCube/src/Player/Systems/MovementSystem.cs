@@ -21,6 +21,5 @@ public partial class MovementSystem : Node
 	public override void _Process(double delta)
 	{
 		Parent.Position += MovementComponent.Speed * (float) delta;
-		EventBus.Instance.EmitSignal(EventBus.SignalName.PlayerMovement, Parent.Position);
 	}
 }

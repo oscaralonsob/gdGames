@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://61b5wtipyief"]
+
+[ext_resource type="Script" path="res://src/GameManager/Systems/EndGameSystem.cs" id="1_t7twr"]
+
+[node name="GameManager" type="Node"]
+
+[node name="EndGameSystem" type="Node" parent="."]
+script = ExtResource("1_t7twr")

@@ -5,6 +5,7 @@ public partial class CameraMovementInputSystem : Node
 {
 	private Node2D Parent { get; set; }
 	private MovementComponent MovementComponent { get; set; }
+	private PlayerAwareComponent PlayerAwareComponent { get; set; }
 
 	public override void _Ready()
 	{
@@ -16,13 +17,16 @@ public partial class CameraMovementInputSystem : Node
 		}
 
 		MovementComponent = Parent.GetNode<MovementComponent>("MovementComponent");
-	  EventBus.Instance.PlayerMovement += UpdateSpeed;
+		PlayerAwareComponent = Parent.GetNode<PlayerAwareComponent>("PlayerAwareComponent");
 	}
 
-  public override void _ExitTree()
-  {
-	  EventBus.Instance.PlayerMovement -= UpdateSpeed;
-  }
+	public override void _Process(double delta)
+	{
+		Node2D target = PlayerAwareComponent.Player;
+		if (null != target) {
+			UpdateSpeed(target.Position);
+		}
+	}
 
   private void UpdateSpeed(Vector2 targetPosition) {
 		Vector2 speed = new Vector2();
