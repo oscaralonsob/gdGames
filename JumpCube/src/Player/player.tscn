@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ylk5fkw1nl6v"]
 
-[ext_resource type="Texture2D" uid="uid://d4a0ncjtsyc71" path="res://src/Player/Player.png" id="1_aakpr"]
+[ext_resource type="Texture2D" uid="uid://ceiyn3px6wybb" path="res://src/Player/Player.png" id="1_aakpr"]
 [ext_resource type="Script" path="res://src/Player/Systems/MovementSystem.cs" id="2_043y3"]
 [ext_resource type="Script" path="res://src/Player/Components/StatsComponent.cs" id="3_47jb4"]
 [ext_resource type="Script" path="res://src/Player/Components/MovementComponent.cs" id="5_e8wbl"]
@@ -9,12 +9,13 @@
 [ext_resource type="Script" path="res://src/Player/Systems/JumpPlayerSystem.cs" id="7_qgfnx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kcims"]
-size = Vector2(20, 60)
+size = Vector2(60, 50)
 
 [node name="Player" type="Node2D"]
 position = Vector2(500, 300)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_aakpr")
 
 [node name="Area2D" type="Area2D" parent="."]
