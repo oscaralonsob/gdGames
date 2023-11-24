@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdtrtei6wuyfl"]
+
+[ext_resource type="Script" path="res://src/Physics/Components/MovementComponent.cs" id="1_fbaou"]
+[ext_resource type="Script" path="res://src/Shared/Components/PlayerAwareComponent.cs" id="1_p184m"]
+[ext_resource type="Script" path="res://src/Shared/ECS/Entity.cs" id="1_rb18g"]
+
+[node name="Camera" type="Node2D"]
+position = Vector2(362, 291)
+script = ExtResource("1_rb18g")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PlayerAwareComponent" type="Node" parent="."]
+script = ExtResource("1_p184m")
+
+[node name="MovementComponent" type="Node" parent="."]
+script = ExtResource("1_fbaou")
+
+[node name="DeathLimitComponent" type="Node" parent="."]

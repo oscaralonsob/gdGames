@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://ylk5fkw1nl6v"]
+
+[ext_resource type="Script" path="res://src/Shared/ECS/Entity.cs" id="1_fw1nb"]
+[ext_resource type="Texture2D" uid="uid://ceiyn3px6wybb" path="res://src/Assets/Player.png" id="2_4riut"]
+[ext_resource type="Script" path="res://src/Physics/Components/MovementComponent.cs" id="3_mf164"]
+[ext_resource type="Script" path="res://src/Input/Components/MovementInputComponent.cs" id="4_8mq0e"]
+[ext_resource type="Script" path="res://src/Input/Components/JumpInputComponent.cs" id="5_5xh6w"]
+[ext_resource type="Script" path="res://src/Physics/Components/GroundedCheckComponent.cs" id="6_1sw1w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kcims"]
+size = Vector2(60, 50)
+
+[node name="Player" type="Node2D"]
+position = Vector2(500, 300)
+script = ExtResource("1_fw1nb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_4riut")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_kcims")
+
+[node name="MovementComponent" type="Node" parent="."]
+script = ExtResource("3_mf164")
+
+[node name="MovementInputComponent" type="Node" parent="."]
+script = ExtResource("4_8mq0e")
+Speed = 100
+
+[node name="JumpInputComponent" type="Node" parent="."]
+script = ExtResource("5_5xh6w")
+JumpForce = 150
+IsGrounded = true
+
+[node name="GroundedCheckComponent" type="Node" parent="."]
+script = ExtResource("6_1sw1w")
