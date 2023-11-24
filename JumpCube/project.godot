@@ -16,7 +16,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-EventBus="*res://src/Helper/EventBus.cs"
+EventBus="*res://src/Shared/EventBus.cs"
 
 [dotnet]
 
