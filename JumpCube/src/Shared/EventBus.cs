@@ -8,6 +8,9 @@ public partial class EventBus: Node
   [Signal]
   public delegate void EntityCreatedEventHandler(Entity entity);
 
+  [Signal]
+  public delegate void EntityDeletedEventHandler(Entity entity);
+
   public static EventBus Instance { get; private set; }
 
   public override void _EnterTree()

@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cf1g5803eotcs"]
+
+[ext_resource type="Texture2D" uid="uid://b76rgflddgk5o" path="res://src/Assets/Cloud1.png" id="1_l6p4x"]
+[ext_resource type="Script" path="res://src/Shared/ECS/Entity.cs" id="1_v2br0"]
+[ext_resource type="Script" path="res://src/Physics/Components/MovementComponent.cs" id="3_3v07e"]
+[ext_resource type="Script" path="res://src/Render/Component/DeleteOutsideViewportComponent.cs" id="4_keb31"]
+
+[node name="Cloud" type="Node2D"]
+script = ExtResource("1_v2br0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("1_l6p4x")
+
+[node name="MovementComponent" type="Node" parent="."]
+script = ExtResource("3_3v07e")
+Speed = Vector2(-25, 0)
+
+[node name="DeleteOutsideViewportComponent" type="Node" parent="."]
+script = ExtResource("4_keb31")

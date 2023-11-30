@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://61b5wtipyief"]
+[gd_scene load_steps=10 format=3 uid="uid://61b5wtipyief"]
 
 [ext_resource type="Script" path="res://src/Input/Systems/MovementInputSystem.cs" id="1_yuhry"]
 [ext_resource type="Script" path="res://src/Input/Systems/JumpInputSystem.cs" id="2_6q1vo"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://src/GameLoop/Systems/EndGameSystem.cs" id="4_phtk7"]
 [ext_resource type="Script" path="res://src/Physics/Systems/GroundedCheckSystem.cs" id="5_65soy"]
 [ext_resource type="Script" path="res://src/GameLoop/Systems/PlayerDeathCheckSystem.cs" id="7_31biv"]
+[ext_resource type="Script" path="res://src/Render/Systems/RandomEntityGeneratorSystem.cs" id="8_mh444"]
+[ext_resource type="Script" path="res://src/Render/Systems/DeleteOutsideViewportSystem.cs" id="9_7ayef"]
 
 [node name="GameManager" type="Node"]
 
@@ -30,3 +32,9 @@ script = ExtResource("5_65soy")
 
 [node name="PlayerDeathCheckSystem" type="Node" parent="."]
 script = ExtResource("7_31biv")
+
+[node name="RandomEntityGeneratorSystem" type="Node" parent="."]
+script = ExtResource("8_mh444")
+
+[node name="DeleteOutsideViewportSystem" type="Node" parent="."]
+script = ExtResource("9_7ayef")

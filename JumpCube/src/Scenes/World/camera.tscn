@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdtrtei6wuyfl"]
+[gd_scene load_steps=7 format=3 uid="uid://cdtrtei6wuyfl"]
 
 [ext_resource type="Script" path="res://src/Physics/Components/MovementComponent.cs" id="1_fbaou"]
 [ext_resource type="Script" path="res://src/Shared/Components/PlayerAwareComponent.cs" id="1_p184m"]
 [ext_resource type="Script" path="res://src/Shared/ECS/Entity.cs" id="1_rb18g"]
+[ext_resource type="Script" path="res://src/GameLoop/Components/DeathLimitComponent.cs" id="4_jf3hi"]
+[ext_resource type="Script" path="res://src/Render/Component/RandomEntityGeneratorComponent.cs" id="5_sl8uh"]
+[ext_resource type="PackedScene" uid="uid://cf1g5803eotcs" path="res://src/Scenes/World/cloud.tscn" id="6_8y7ix"]
 
 [node name="Camera" type="Node2D"]
-position = Vector2(362, 291)
 script = ExtResource("1_rb18g")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -17,3 +19,9 @@ script = ExtResource("1_p184m")
 script = ExtResource("1_fbaou")
 
 [node name="DeathLimitComponent" type="Node" parent="."]
+script = ExtResource("4_jf3hi")
+
+[node name="RandomEntityGeneratorComponent" type="Node" parent="."]
+script = ExtResource("5_sl8uh")
+PackedScene = ExtResource("6_8y7ix")
+MaxNumberOfNodes = 5

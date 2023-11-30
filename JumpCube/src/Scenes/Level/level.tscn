@@ -19,3 +19,4 @@ position = Vector2(362, 291)
 position = Vector2(357, 227)
 
 [node name="Camera" parent="." instance=ExtResource("3_ch4np")]
+position = Vector2(362, 291)
