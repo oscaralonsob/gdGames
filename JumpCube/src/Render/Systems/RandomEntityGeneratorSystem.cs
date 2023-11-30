@@ -6,11 +6,16 @@ using System.Linq;
 public partial class RandomEntityGeneratorSystem : ECSSystem
 {
 	private int offset = 25;
+
+	PseudoRandomGenerator RandomGenerator { get; set; }
+
 	public override void _Ready()
 	{
 		base.Init(new List<Type>{
 			typeof(RandomEntityGeneratorComponent),
 		});
+
+		RandomGenerator = new PseudoRandomGenerator(10);
 	}
 
 	public override void execute(Entity entity, double delta)
@@ -48,24 +53,12 @@ public partial class RandomEntityGeneratorSystem : ECSSystem
 	}
 
 	private Vector2 getRandomPosition(Vector2 cameraPositionMin, Vector2 cameraPositionMax) {
-		Vector2 position = new Vector2();
-		Random random = new Random();
-
-		if (cameraPositionMax.X == cameraPositionMin.X) {
-			position.X = cameraPositionMax.X; 
-		} else {
-			position.X = (float) random.NextDouble() * (cameraPositionMax.X - cameraPositionMin.X) + cameraPositionMin.X;
-		}
-
-		position.Y = (float) random.NextDouble() * (cameraPositionMax.Y - cameraPositionMin.Y) + cameraPositionMin.Y + offset;
-
-
+		Vector2 position = new Vector2
+		{
+				X = RandomGenerator.Next(cameraPositionMin.X, cameraPositionMax.X),
+				Y = RandomGenerator.Next(cameraPositionMin.Y, cameraPositionMax.Y)
+		};
+		
 		return position;
 	}
-	/*
-	* TODO:
-	* Crear un helper que sea random y que de random entre el 1 y el 10 (por ejemplo) 
-	* Ademas, dado un max y un min, que te lo extrapole. 
-	* De esta forma las nubes siempre estaran en las mismas X posiciones pero seran mas "aleatorias"
-	*/
 }
