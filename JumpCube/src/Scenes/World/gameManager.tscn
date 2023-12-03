@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://61b5wtipyief"]
+[gd_scene load_steps=12 format=3 uid="uid://61b5wtipyief"]
 
 [ext_resource type="Script" path="res://src/Input/Systems/MovementInputSystem.cs" id="1_yuhry"]
 [ext_resource type="Script" path="res://src/Input/Systems/JumpInputSystem.cs" id="2_6q1vo"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://src/Render/Systems/RandomEntityGeneratorSystem.cs" id="8_mh444"]
 [ext_resource type="Script" path="res://src/Render/Systems/DeleteOutsideViewportSystem.cs" id="9_7ayef"]
 [ext_resource type="Script" path="res://src/UI/Systems/ScoreDisplaySystem.cs" id="10_eeht8"]
+[ext_resource type="Script" path="res://src/Physics/Systems/CameraMovementRestrictedSystem.cs" id="11_pyklc"]
 
 [node name="GameManager" type="Node"]
 
@@ -42,3 +43,6 @@ script = ExtResource("9_7ayef")
 
 [node name="ScoreDisplaySystem" type="Node" parent="."]
 script = ExtResource("10_eeht8")
+
+[node name="CameraRestrictedMovementSystem" type="Node" parent="."]
+script = ExtResource("11_pyklc")

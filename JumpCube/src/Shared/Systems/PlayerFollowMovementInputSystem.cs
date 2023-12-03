@@ -24,7 +24,7 @@ public partial class PlayerFollowMovementInputSystem : ECSSystem
 			if (target.Position.Y < entity.Position.Y) {
 				speed.Y = target.Position.Y - entity.Position.Y;
 			}
-			speed.X = target.Position.X - entity.Position.X;
+			speed.X = 0;
 			movementComponent.Speed = speed;
 		}
 	}
