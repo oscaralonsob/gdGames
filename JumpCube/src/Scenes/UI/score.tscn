@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://drldgtl7gagxi"]
+
+[ext_resource type="Script" path="res://src/Shared/ECS/EntityControl.cs" id="1_1cwng"]
+[ext_resource type="Script" path="res://src/Shared/Components/PlayerAwareComponent.cs" id="2_32s0u"]
+[ext_resource type="Script" path="res://src/UI/Components/ScoreDisplayComponent.cs" id="3_s1066"]
+
+[node name="Score" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_1cwng")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.0
+offset_right = 28.0
+offset_bottom = 26.0
+grow_horizontal = 2
+text = "Prueba"
+
+[node name="PlayerAwareComponent" type="Node" parent="."]
+script = ExtResource("2_32s0u")
+
+[node name="ScoreDisplayComponent" type="Node" parent="."]
+script = ExtResource("3_s1066")
