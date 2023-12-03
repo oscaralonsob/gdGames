@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ylk5fkw1nl6v"]
+[gd_scene load_steps=10 format=3 uid="uid://ylk5fkw1nl6v"]
 
 [ext_resource type="Script" path="res://src/Shared/ECS/Entity.cs" id="1_fw1nb"]
 [ext_resource type="Texture2D" uid="uid://ceiyn3px6wybb" path="res://src/Assets/Player.png" id="2_4riut"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://src/Input/Components/MovementInputComponent.cs" id="4_8mq0e"]
 [ext_resource type="Script" path="res://src/Input/Components/JumpInputComponent.cs" id="5_5xh6w"]
 [ext_resource type="Script" path="res://src/Physics/Components/GroundedCheckComponent.cs" id="6_1sw1w"]
+[ext_resource type="AudioStream" uid="uid://dcmkcv1d6aixq" path="res://src/Assets/JumpSound.wav" id="7_6awfe"]
+[ext_resource type="AudioStream" uid="uid://dfjn403bu07xy" path="res://src/Assets/GroundSound.ogg" id="7_07apf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kcims"]
 size = Vector2(60, 50)
@@ -34,6 +36,10 @@ Speed = 100
 script = ExtResource("5_5xh6w")
 JumpForce = 150
 IsGrounded = true
+JumpSound = ExtResource("7_6awfe")
+GroundSound = ExtResource("7_07apf")
 
 [node name="GroundedCheckComponent" type="Node" parent="."]
 script = ExtResource("6_1sw1w")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

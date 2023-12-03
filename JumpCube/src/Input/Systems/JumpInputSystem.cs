@@ -13,6 +13,7 @@ public partial class JumpInputSystem : ECSSystem
 		base.Init(new List<Type>{
 			typeof(MovementComponent),
 			typeof(JumpInputComponent),
+			typeof(AudioStreamPlayer2D),
 		});
 	}
 
@@ -20,6 +21,7 @@ public partial class JumpInputSystem : ECSSystem
 	{
 		MovementComponent movementComponent = entity.GetNode<MovementComponent>("MovementComponent");
 		JumpInputComponent jumpInputComponent = entity.GetNode<JumpInputComponent>("JumpInputComponent");
+		AudioStreamPlayer2D audioStreamPlayer2D = entity.GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
 
 		if (!jumpInputComponent.IsGrounded) {
 				float currentFallingVelocity = movementComponent.Speed.Y + (float) delta * FallingAcceleration;
@@ -35,6 +37,8 @@ public partial class JumpInputSystem : ECSSystem
 				float currentFallingVelocity = jumpInputComponent.JumpForce;
 
 				movementComponent.Speed = new Vector2(movementComponent.Speed.X, -currentFallingVelocity);
+				audioStreamPlayer2D.Stream = jumpInputComponent.JumpSound;
+				audioStreamPlayer2D.Play();
 			} 
 		}
 	}

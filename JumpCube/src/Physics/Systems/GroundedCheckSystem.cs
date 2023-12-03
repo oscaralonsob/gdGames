@@ -11,6 +11,7 @@ public partial class GroundedCheckSystem : ECSSystem
 			typeof(GroundedCheckComponent),
 			typeof(JumpInputComponent), //TODO: move to ground check
 			typeof(Area2D),
+			typeof(AudioStreamPlayer2D),
 		});
 	}
 
@@ -19,6 +20,8 @@ public partial class GroundedCheckSystem : ECSSystem
 		Area2D area2D = entity.GetNode<Area2D>("Area2D");
 		JumpInputComponent jumpInputComponent = entity.GetNode<JumpInputComponent>("JumpInputComponent");
 		GroundedCheckComponent groundedCheckComponent = entity.GetNode<GroundedCheckComponent>("GroundedCheckComponent");
+		AudioStreamPlayer2D audioStreamPlayer2D = entity.GetNode<AudioStreamPlayer2D>("AudioStreamPlayer2D");
+
 		bool alreadyOverlapping = groundedCheckComponent.PreviousFrameWasOverlapping;
 		bool overlapping = false;
 
@@ -30,6 +33,9 @@ public partial class GroundedCheckSystem : ECSSystem
 						Node2D otherNode = other.GetParent<Node2D>();
 						if (otherNode.Position.Y > entity.Position.Y) {
 							jumpInputComponent.IsGrounded = true;
+
+							audioStreamPlayer2D.Stream = jumpInputComponent.GroundSound;
+							audioStreamPlayer2D.Play();
 						}
 					}
 				}
