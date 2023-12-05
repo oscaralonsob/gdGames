@@ -31,7 +31,7 @@ public partial class GroundedCheckSystem : ECSSystem
 					overlapping = true; 
 					if (!alreadyOverlapping) {
 						Node2D otherNode = other.GetParent<Node2D>();
-						if (otherNode.Position.Y > entity.Position.Y) {
+						if (otherNode.Position.Y > entity.Position.Y + area2D.GetNode<CollisionShape2D>("CollisionShape2D").Shape.GetRect().Size.Y/2) {
 							jumpInputComponent.IsGrounded = true;
 
 							audioStreamPlayer2D.Stream = jumpInputComponent.GroundSound;
