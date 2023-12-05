@@ -49,7 +49,7 @@ public partial class RandomEntityGeneratorSystem : ECSSystem
 		Node2D node2D = randomEntityGeneratorComponent.PackedScene.Instantiate<Node2D>();
 		node2D.Position = position;
 		randomEntityGeneratorComponent.Nodes.Add(node2D);
-		GetTree().Root.AddChild(node2D);
+		GetTree().Root.GetNode<Node>("Level").AddChild(node2D);
 	}
 
 	private Vector2 getRandomPosition(Vector2 cameraPositionMin, Vector2 cameraPositionMax) {

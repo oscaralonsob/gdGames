@@ -4,7 +4,10 @@ public partial class EventBus: Node
 {
   [Signal]
   public delegate void PlayerKilledEventHandler();
-
+  [Signal]
+  public delegate void PausedGameEventHandler();
+  [Signal]
+  public delegate void UnPausedGameEventHandler();
   [Signal]
   public delegate void EntityCreatedEventHandler(Entity entity);
   [Signal]
