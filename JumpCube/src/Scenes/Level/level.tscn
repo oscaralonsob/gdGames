@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bgtpssp0jv0dp"]
+[gd_scene load_steps=9 format=3 uid="uid://bgtpssp0jv0dp"]
 
 [ext_resource type="PackedScene" uid="uid://c6capijieeabv" path="res://src/Scenes/World/platform.tscn" id="1_c4cv0"]
 [ext_resource type="PackedScene" uid="uid://ylk5fkw1nl6v" path="res://src/Scenes/World/player.tscn" id="2_yovo5"]
 [ext_resource type="PackedScene" uid="uid://cdtrtei6wuyfl" path="res://src/Scenes/World/camera.tscn" id="3_ch4np"]
 [ext_resource type="PackedScene" uid="uid://61b5wtipyief" path="res://src/Scenes/World/gameManager.tscn" id="4_2f2lh"]
 [ext_resource type="PackedScene" uid="uid://drldgtl7gagxi" path="res://src/Scenes/UI/score.tscn" id="5_mk55o"]
-[ext_resource type="PackedScene" uid="uid://c42oae5gsy4vk" path="res://src/Scenes/pause_menu.tscn" id="6_p6r8n"]
+[ext_resource type="PackedScene" uid="uid://c42oae5gsy4vk" path="res://src/Scenes/UI/pause_menu.tscn" id="6_p6r8n"]
 [ext_resource type="Script" path="res://src/Shared/ECS/EntityControl.cs" id="7_40qws"]
+[ext_resource type="PackedScene" uid="uid://wcf70mbwi2ax" path="res://src/Scenes/UI/death_menu.tscn" id="8_75aoy"]
 
 [node name="Level" type="Node"]
 
@@ -41,6 +42,11 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 
 [node name="PauseMenu" parent="CanvasLayer/Control" instance=ExtResource("6_p6r8n")]
+process_mode = 3
+layout_mode = 2
+script = ExtResource("7_40qws")
+
+[node name="DeathMenu" parent="CanvasLayer/Control" instance=ExtResource("8_75aoy")]
 process_mode = 3
 layout_mode = 2
 script = ExtResource("7_40qws")

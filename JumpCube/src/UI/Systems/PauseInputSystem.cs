@@ -16,7 +16,7 @@ public partial class PauseInputSystem : ECSSystemControl
 		GameIsPause = false;
     EventBus.Instance.UnPausedGame += UnPausedGame;
 	}
-	
+
 	public override void _ExitTree()
 	{
     EventBus.Instance.UnPausedGame -= UnPausedGame;
