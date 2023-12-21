@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://61b5wtipyief"]
+[gd_scene load_steps=16 format=3 uid="uid://61b5wtipyief"]
 
 [ext_resource type="Script" path="res://src/Input/Systems/MovementInputSystem.cs" id="1_yuhry"]
 [ext_resource type="Script" path="res://src/Input/Systems/JumpInputSystem.cs" id="2_6q1vo"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://src/UI/Systems/ActivateOnPauseSystem.cs" id="12_5m1ub"]
 [ext_resource type="Script" path="res://src/UI/Systems/PauseInputSystem.cs" id="13_8tx1o"]
 [ext_resource type="Script" path="res://src/UI/Systems/ActivateOnDeathSystem.cs" id="13_dqdfr"]
+[ext_resource type="Script" path="res://src/Render/Systems/PlatformGeneratorSystem.cs" id="15_8u8k3"]
 
 [node name="GameManager" type="Node"]
 
@@ -61,3 +62,6 @@ script = ExtResource("13_8tx1o")
 [node name="ActivateOnDeathSystem" type="Node" parent="."]
 process_mode = 3
 script = ExtResource("13_dqdfr")
+
+[node name="PlatoformGeneratorSystem" type="Node" parent="."]
+script = ExtResource("15_8u8k3")
